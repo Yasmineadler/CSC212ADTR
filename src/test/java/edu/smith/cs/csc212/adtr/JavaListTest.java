@@ -20,6 +20,7 @@ public class JavaListTest {
 	 */
 	private <T> ListADT<T> makeEmptyList() {
 		return new JavaList<>();
+		//idk
 	}
 	
 	/**
