@@ -167,4 +167,21 @@ public class JavaListTest {
 	public void testEquals2() {
 		assertEquals(makeFullList(), makeFullList());
 	}
+	
+	@Test
+	public void setIndex() {
+		ListADT<String> data = makeFullList();
+		data.setIndex(2, "e");
+		ListADT<String> checkdata = new JavaList<>(Arrays.asList("a", "b", "e", "d"));
+		assertEquals(data, checkdata);
+		}
+	
+	@Test
+	public void setNotIndex() {
+		ListADT<String> data = makeFullList();
+		data.setIndex(4, "e");
+		ListADT<String> checkdata = new JavaList<>(Arrays.asList("a", "b", "e", "d"));
+		assertEquals(data, checkdata);
+		}
 }
+

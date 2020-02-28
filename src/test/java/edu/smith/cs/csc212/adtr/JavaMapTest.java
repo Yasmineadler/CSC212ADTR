@@ -21,4 +21,76 @@ public class JavaMapTest {
 		assertEquals(empty.size(), 0);
 		//Assert.assert
 	}
+	@Test
+	public void testSize() {
+		MapADT<String, String> two = new JavaMap<>();
+		two.put("apple", "6");
+		assertEquals(two.size(), 1);
+		two.put("banana", "10");
+		assertEquals(two.size(), 2);
+	}
+	
+	
+	@Test
+	public void testPut() {
+		MapADT<String, String> one = new JavaMap<>();
+		one.put("apple", "6");
+		assertEquals(one.size(), 1);
+	}
+	
+	@Test
+	public void testPutTwo() {
+		MapADT<String, String> two = new JavaMap<>();
+		two.put("apple", "6");
+		two.put("apple", "10");
+		
+		MapADT<String, String> one = new JavaMap<>();
+		one.put("apple", "10");
+		
+		assertEquals(one, two);	
+	}
+	
+
+	@Test
+	public void testGet() {
+		MapADT<String, String> two = new JavaMap<>();
+		two.put("apple", "6");
+		two.put("banana", "10");
+		two.put("banana", "20");
+		
+		assertEquals(two.get("banana"), "20");	
+		assertEquals(two.get("apple"), "6");
+	}
+	
+	@Test
+	public void testNotGet() {
+		MapADT<String, String> two = new JavaMap<>();
+		two.put("apple", "6");
+		assertEquals(two.get("banana"), null);
+		assertEquals(two.get("apple"), "6");
+	}
+	
+	@Test
+	public void testRemove() {
+		MapADT<String, String> two = new JavaMap<>();
+		two.put("apple", "6");
+		two.put("banana", "10");
+		two.remove("apple");
+		
+		assertEquals(two.get("apple"), null);	
+		assertEquals(two.get("banana"), "10");
+	}
+
+	
+	@Test
+	public void testNotRemove() {
+		MapADT<String, String> two = new JavaMap<>();
+		two.put("apple", "6");
+		two.put("banana", "10");
+		two.remove("pear");
+		
+		assertEquals(two.size(), 2);
+		assertEquals(two.get("pear"), null);
+	}
 }
+
