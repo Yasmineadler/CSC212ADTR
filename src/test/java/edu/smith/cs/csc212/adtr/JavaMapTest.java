@@ -31,6 +31,7 @@ public class JavaMapTest {
 	}
 	
 	
+	//Tasha
 	@Test
 	public void testPut() {
 		MapADT<String, String> one = new JavaMap<>();
@@ -38,6 +39,7 @@ public class JavaMapTest {
 		assertEquals(one.size(), 1);
 	}
 	
+	//Tasha
 	@Test
 	public void testPutTwo() {
 		MapADT<String, String> two = new JavaMap<>();
@@ -50,7 +52,7 @@ public class JavaMapTest {
 		assertEquals(one, two);	
 	}
 	
-
+	//Tasha
 	@Test
 	public void testGet() {
 		MapADT<String, String> two = new JavaMap<>();
@@ -62,6 +64,8 @@ public class JavaMapTest {
 		assertEquals(two.get("apple"), "6");
 	}
 	
+	
+	//Tasha
 	@Test
 	public void testNotGet() {
 		MapADT<String, String> two = new JavaMap<>();
@@ -70,6 +74,7 @@ public class JavaMapTest {
 		assertEquals(two.get("apple"), "6");
 	}
 	
+	//Tasha
 	@Test
 	public void testRemove() {
 		MapADT<String, String> two = new JavaMap<>();
@@ -81,7 +86,7 @@ public class JavaMapTest {
 		assertEquals(two.get("banana"), "10");
 	}
 
-	
+	//Tasha
 	@Test
 	public void testNotRemove() {
 		MapADT<String, String> two = new JavaMap<>();

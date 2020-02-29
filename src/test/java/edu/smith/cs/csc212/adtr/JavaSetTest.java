@@ -32,6 +32,7 @@ public class JavaSetTest {
 		assertEquals(one.size(), 1);
 	}
 
+	//Tasha
 	@Test
 	public void testInsertRepeated() {
 		SetADT<String> pets = new JavaSet<>();
@@ -43,10 +44,9 @@ public class JavaSetTest {
 		assertEquals(pets.size(), 2);
 		assertEquals(true, pets.contains("Dog"));
 		assertEquals(true, pets.contains("Cat"));
-
-
 	}
 	
+	//Tasha
 	@Test
 	public void testRemove() {
 		SetADT<String> pets = new JavaSet<>();
@@ -60,6 +60,7 @@ public class JavaSetTest {
 		assertFalse(pets.contains("Dog"));
 	}
 	
+	//Tasha
 	@Test
 	public void testNotRemove() {
 		SetADT<String> pets = new JavaSet<>();
@@ -74,6 +75,8 @@ public class JavaSetTest {
 		assertFalse(pets.contains("Gecko"));
 	}
 	
+	
+	//Tasha
 	@Test
 	public void testContains () {
 		SetADT<String> pets = new JavaSet<>();
@@ -82,17 +85,12 @@ public class JavaSetTest {
 		assertTrue(pets.contains("Cat"));
 	}
 	
+	//Tasha
 	@Test
 	public void testNotContains() {
 		SetADT<String> pets = new JavaSet<>();
 		pets.insert("Gecko");
 		assertEquals(pets.size(), 1);
 		assertFalse(pets.contains("Dog"));
-	}
-	
-	
-	
-
-	
-	
+	}	
 }

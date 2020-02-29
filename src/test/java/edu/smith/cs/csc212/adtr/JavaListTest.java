@@ -20,7 +20,6 @@ public class JavaListTest {
 	 */
 	private <T> ListADT<T> makeEmptyList() {
 		return new JavaList<>();
-		//idk
 	}
 	
 	/**
@@ -88,10 +87,6 @@ public class JavaListTest {
 		Assert.assertEquals(false, data.isEmpty());
 	}
 	
-	// TODO: test list addToBack.
-	// TODO: test list remove
-	// TODO test addIndex methods.
-	
 	@Test
 	public void testGetFront() {
 		ListADT<String> data = makeFullList();
@@ -152,7 +147,6 @@ public class JavaListTest {
 		data.addIndex(-1, "the");
 	}
 	
-	// TODO write some tests for setIndex.
 	
 	@Test
 	public void testToJava() {
@@ -169,20 +163,112 @@ public class JavaListTest {
 		assertEquals(makeFullList(), makeFullList());
 	}
 	
+	//Tasha
 	@Test
 	public void setIndex() {
 		ListADT<String> data = makeFullList();
 		data.setIndex(2, "e");
-		ListADT<String> checkdata = new JavaList<>(Arrays.asList("a", "b", "e", "d"));
+		data.setIndex(2, "a");
+		ListADT<String> checkdata = new JavaList<>(Arrays.asList("a", "b", "a", "d"));
 		assertEquals(data, checkdata);
 		}
 	
+	//Tasha
 	@Test
-	public void setNotIndex() {
+	public void addIndex() {
 		ListADT<String> data = makeFullList();
-		data.setIndex(4, "e");
-		ListADT<String> checkdata = new JavaList<>(Arrays.asList("a", "b", "e", "d"));
+		data.addIndex(4, "e");
+		ListADT<String> checkdata = new JavaList<>(Arrays.asList("a", "b", "c", "d", "e"));
 		assertEquals(data, checkdata);
 		}
+	
+	//Allison
+	@Test
+	public void addNotIndex() {
+		
+		}
+	
+	//Tasha
+	@Test
+	public void addBack() {
+		ListADT<String> data = makeFullList();
+		data.addBack("e");
+		ListADT<String> checkdata = new JavaList<>(Arrays.asList("a", "b", "c", "d", "e"));
+		assertEquals(data, checkdata);
+		
+	}
+	
+	//Allison
+	@Test
+	public void addBackTwice() {
+		ListADT<String> data = makeFullList();
+		data.addBack("a");
+		ListADT<String> checkData = new JavaList<>(Arrays.asList("a", "b", "c", "d", "a"));
+		assertEquals(data, checkData);
+	}
+	
+	//Tasha
+	@Test
+	public void removeBack() {
+		ListADT<String> data = makeFullList();
+		data.removeBack();
+		ListADT<String> checkdata = new JavaList<>(Arrays.asList("a", "b", "c"));
+		assertEquals(data, checkdata);
+		data.removeBack();
+		ListADT<String> checkdata2 = new JavaList<>(Arrays.asList("a", "b"));
+		assertEquals(data, checkdata2);
+	}
+	
+	//Allison
+	public void removeBackEmpty() {
+		ListADT<String> noData = makeEmptyList();
+		noData.removeBack();
+		ListADT<String> checkNoData = makeEmptyList();
+		assertEquals(noData, checkNoData);
+		
+	}
+	
+	//Tasha
+	@Test
+	public void removeIndex() {
+		ListADT<String> data = makeFullList();
+		data.removeIndex(0);
+		ListADT<String> checkdata = new JavaList<>(Arrays.asList("b", "c", "d"));
+		assertEquals(data, checkdata);
+		data.removeIndex(1);
+		ListADT<String> checkdata1 = new JavaList<>(Arrays.asList("b", "d"));
+		assertEquals(data, checkdata1);
+	}
+	
+	//Allison
+	public void removeIndexEmpty() {
+		ListADT<String> noData = makeEmptyList();
+		noData.removeIndex(0);
+		ListADT<String> checkNoData = makeEmptyList();
+		assertEquals(noData, checkNoData);
+	}
+	
+	//Tasha
+	@Test
+	public void removeFront() {
+		ListADT<String> data = makeFullList();
+		data.removeFront();
+		ListADT<String> checkdata = new JavaList<>(Arrays.asList("b", "c", "d"));
+		assertEquals(data, checkdata);
+		data.removeFront();
+		ListADT<String> checkdata1 = new JavaList<>(Arrays.asList("c", "d"));
+		assertEquals(data, checkdata1);
+	}
+	//Allison
+	@Test
+	public void removeFrontTwice() {
+		ListADT<String> data = makeFullList();
+		data.removeFront();
+		ListADT<String> checkNoData = new JavaList<>(Arrays.asList("b", "c", "d"));
+		assertEquals(data, checkNoData);
+		data.removeFront();
+		ListADT<String> checkTwiceData = new JavaList<>(Arrays.asList("c", "d"));
+		assertEquals(data, checkTwiceData);
+	}
 }
 

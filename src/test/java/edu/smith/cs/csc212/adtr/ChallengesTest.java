@@ -8,7 +8,7 @@ import edu.smith.cs.csc212.adtr.real.JavaMap;
 import edu.smith.cs.csc212.adtr.real.JavaSet;
 
 public class ChallengesTest {
-
+	
 	@Test
 	public void testUnionSimple() {
 		SetADT<String> left = new JavaSet<>();
@@ -24,6 +24,46 @@ public class ChallengesTest {
 		expected.insert("B");
 		expected.insert("C");
 		Assert.assertEquals(expected, Challenges.union(left, right));
+	}
+	
+	//Allison
+	@Test
+	public void testUnionEmpty() {
+		SetADT<String> left = new JavaSet<>();
+		SetADT<String> right = new JavaSet<>();
+		
+		SetADT<String> expected = new JavaSet<>();
+		
+		Assert.assertEquals(expected, Challenges.union(left, right));
+	}
+	
+	//Allison
+	@Test
+	public void testIntersectionNone() {
+		SetADT<String> left = new JavaSet<>();
+		SetADT<String> right = new JavaSet<>();
+		
+		left.insert("A");
+		left.insert("B");
+		left.insert("C");
+		
+		right.insert("D");
+		right.insert("E");
+		
+		SetADT<String> expected = new JavaSet<>();
+		Assert.assertEquals(expected, Challenges.intersection(left, right));
+		
+	}
+	
+	//Allison
+	@Test
+	public void testIntersectionEmpty() {
+		SetADT<String> left = new JavaSet<>();
+		SetADT<String> right = new JavaSet<>();
+		
+		SetADT<String> expected = new JavaSet<>();
+		Assert.assertEquals(expected, Challenges.intersection(left, right));
+		
 	}
 	
 	@Test
@@ -55,5 +95,16 @@ public class ChallengesTest {
 		
 		Assert.assertEquals(expected, Challenges.wordCount(example));
 	}
+	
+	//Allison
+	@Test
+	public void testWordCountEmpty() {
+		ListADT<String> example = new JavaList<>();
+		
+		MapADT<String, Integer> expected = new JavaMap<>();
+		
+		Assert.assertEquals(expected, Challenges.wordCount(example));
+	}
+
 
 }
